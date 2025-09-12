@@ -2688,19 +2688,3 @@ function Kavo.CreateLib(kavName, themeList)
     return Tabs
 end
 return Kavo
-local Window = Library.CreateLib("RomaHub", "RJTheme1")
-
-local Tab = Window:NewTab("WalkSpeed")
-
-local Section = Tab:NewSection("Walk")
-
-Section:NewSlider("Скорость", "Увелечение скорости", 500, 0, function(s) -- 500 (Макс. значение) | 0 (Мин. значение)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-end)
-Section:NewToggle("Гравитация", "Настройки гравитации", function(state) -- 500(Макс. значение) | 0 (Мин. значение)
-    if state then
-        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 500
-    else
-        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
-    end
-end)
